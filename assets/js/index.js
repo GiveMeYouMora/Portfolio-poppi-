@@ -1,3 +1,26 @@
+// let lived = document.getElementsByTagName('div')[0]
+// console.log(lived);
+// let loved = document.querySelector('.block')
+// console.log(loved);
+// let luved = document.getElementById('blockid')
+// console.log(luved);
+// lived.style.height = '200px'
+// lived.style.width = '50px'
+// lived.style.borderRadius = '10px'
+// lived.style.backgroundColor = '#5671a6'
+// loved.style.height = '200px'
+// loved.style.width = '50px'
+// loved.style.borderRadius = '10px'
+// loved.style.backgroundColor = '#383838'
+// luved.style.height = '200px'
+// luved.style.width = '50px'
+// luved.style.borderRadius = '10px'
+// luved.style.backgroundColor = '#6d8093'
+
+// console.log(lived.classList);
+// lived.classList.add('--active')
+// loved.classList.remove('fgfdg')
+
 // console.log("One peace")
 // var name="73"
 // let name_2= "5 6"
@@ -33,7 +56,36 @@ let baground =document.querySelector("body")
 
 console.log(baground.style.backgroundImage);
 let check = document.getElementById("lightmode")
-check.onclick = function(){
-    baground.style.backgroundImage = 'url("./assets/images/wave.png")';
-    console.log("dsfsfsfs")
-};
+let block = document.querySelector('.block');
+
+let laved = false;
+
+let lightmode = true
+
+check.onclick = function() {
+
+    console.log(check.checked);
+   if (check.checked == false) (
+        baground.style.backgroundImage = 'url(./assets/images/background-light.png)' 
+   )
+   else (
+        baground.style.backgroundImage = 'url(./assets/images/wave.png)'
+   )
+   }
+let massCards = [
+{
+    title:'Заголовок',
+    text:'text',
+    data:'30.01.2024',
+    isPublick:false,
+},
+];
+let cardlist = document.querySelector(".cardlist");
+cardlist.innerHTML = "<h1> поменяли <h1>"
+cardlist.insertAdjacentHTML("afterbegin",`      
+</div>
+<h2>Феличита</h2>
+<p>Выйду на улицу</p>
+<p>30.01.2024</p>
+ </div>`)
+cardlist.insertAdjacentHTML("beforeend",`<h1>Карточка<h1>`)

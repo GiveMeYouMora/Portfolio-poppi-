@@ -75,12 +75,9 @@ button {
 }
 
 .btn-demo {
-  /* Вид кнопки */
   background: none;
   color: var(--text-main-blue);
-  /* текст */
   text-transform: uppercase;
-  /* Отступы внутри */
   padding-left: 40px;
   padding-right: 40px;
 }
