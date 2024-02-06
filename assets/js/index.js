@@ -81,11 +81,14 @@ let massCards = [
 },
 ];
 let cardlist = document.querySelector(".cardlist");
-cardlist.innerHTML = "<h1> поменяли <h1>"
-cardlist.insertAdjacentHTML("afterbegin",`      
+cardlist.insertAdjacentHTML("beforeend",`<h1>Карточка<h1>`)
+for (let i = 0; i<massCards.length; i++) {
+     cardlist.insertAdjacentHTML(
+          "afterbegin",`      
 </div>
 <h2>Феличита</h2>
 <p>Выйду на улицу</p>
 <p>30.01.2024</p>
  </div>`)
-cardlist.insertAdjacentHTML("beforeend",`<h1>Карточка<h1>`)
+     
+}
