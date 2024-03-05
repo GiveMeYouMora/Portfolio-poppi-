@@ -10,30 +10,74 @@
         top: 20px;
         left: 20px;
         width: 200px;
+        transition: 5s;
+      }
+      ol {
+        font-size: 40px;
+      }
+      #anin:hover {
+        transform: translate(500px, 0);
+        transition-timing-function: ease-in;
+      }
+      @keyframes anin {
+        0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(10px);
+        }
+        50% {
+          transform: translateY(20px);
+        }
+        75% {
+          transform: translateY(30px);
+        }
+        100% {
+          transform: translateY(40px);
+        }
+      }
+      @keyframes anim {
+        0% {
+          transform: translateY(0px 0px);
+        }
+        33% {
+          transform: translateY(0px 20px);
+        }
+        66% {
+          transform: translateY(20px 20px);
+        }
+        100% {
+          transform: translateY(0px 0px);
+        }
       }
     </style>
   </head>
   <body>
-    <img
-      id="anin"
-      src="/Portfolio-poppi--main/assets/images/pngwing.com.png"
-      alt=""
-    />
-    <button class="movement">Move</button>
+    <img id="anin" src="/assets/images/lom.png" alt="" />
+    <button id="anim" class="movement">Move</button>
+    <button id="anim" class="boom">Boom</button>
   </body>
   <script>
     let btn = document.querySelector(".movement");
-
-    let anin = document.getElementById("anin");
-    let position = 20;
-    btn.onclick = function () {
-      const se = setInterval(() => {
-        anin.style.left = position + "px";
-        position += 1;
-      }, 20);
-      setTimeout(() => {
-        clearInterval(se);
-      }, 5000);
+    let isAninStart = false;
+    btn.onclick = () => {
+      if (isAninStart) {
+        anim.style.animation = null;
+        isAnimStart = false;
+      } else {
+        anim.style.animation = "Updown 2s line 1s infinite alternate";
+        isAnimStart = true;
+      }
+    };
+    let btn = document.querySelector("boom");
+    btn.onclick = () => {
+      if (isAnimStart) {
+        anim.style.animation = null;
+        isAnimStart = false;
+      } else {
+        anim.style.animation = "Updown 2s line 1s infinite alternate";
+        isAnimStart = true;
+      }
     };
   </script>
 </html>
